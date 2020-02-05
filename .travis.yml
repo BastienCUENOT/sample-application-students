@@ -4,3 +4,15 @@ cache:
  directories:
  - "$HOME/.m2"
  - "$HOME/.sonar/cache"
+
+services:
+  - docker
+
+after_success:
+  - docker build -t changelogimage $HOME/build/BastienCUENOT/sample-application-students/sample-application-db-changelog-job/
+  - docker build -t httpserverimage $HOME/build/BastienCUENOT/sample-application-students/sample-application-http-api-server/ 
+
+notifications:
+ email:
+   on_failure: never
+

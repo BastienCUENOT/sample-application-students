@@ -1,6 +1,7 @@
 script:
   - mvn clean verify
-  - ls
+  - pwd
+  - ls $HOME/build/BastienCUENOT/sample-application-students/sample-application-http-api-server/target/
 cache:
  directories:
  - "$HOME/.m2"

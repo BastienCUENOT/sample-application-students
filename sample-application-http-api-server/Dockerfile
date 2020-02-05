@@ -1,3 +1,6 @@
 FROM openjdk:11-jre
-COPY $HOME/build/BastienCUENOT/sample-application-students/sample-application-http-api-server/target/*exec.jar ./httpserverapp.jar
-ENTRYPOINT java -jar httpserverapp.jar
+COPY ./target/sample-application-http-api-server-0.0.1-SNAPSHOT-exec.jar ./httpapp.jar
+
+EXPOSE 8080
+
+ENTRYPOINT java -jar httpapp.jar

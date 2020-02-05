@@ -2,12 +2,10 @@ addons:
   sonarcloud:
     organization: "bastiencuenot"
     token:
-      secure: $SONAR_TOKEN
+      secure: 4a2ea8de666ac28ebaa69046443291985543e5e1
 
 script:
-  - mvn clean verify sonar:sonar -Pcoverage -Dsonar.projectKey=sonar-simple-app
-  - pwd
-  - ls $HOME/build/BastienCUENOT/sample-application-students/sample-application-http-api-server/target/
+ - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=BastienCUENOT_sample-application-students
 cache:
  directories:
  - "$HOME/.m2"

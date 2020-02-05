@@ -1,5 +1,6 @@
 script:
   - mvn clean verify
+  - ls
 cache:
  directories:
  - "$HOME/.m2"

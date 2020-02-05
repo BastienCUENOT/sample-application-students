@@ -13,7 +13,9 @@ services:
 after_success:
   - docker build -t changelogimage $HOME/build/BastienCUENOT/sample-application-students/sample-application-db-changelog-job/
   - docker build -t httpserverimage $HOME/build/BastienCUENOT/sample-application-students/sample-application-http-api-server/ 
-
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker tag changelogimage $DOCKER_USERNAME/changelogimage:1.0
+  - docker push $DOCKER_USERNAME/changelogimage
 notifications:
  email:
    on_failure: never

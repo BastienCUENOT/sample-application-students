@@ -2,5 +2,5 @@ script:
   - mvn clean verify
 cache:
  directories:
- - "$HOME/.m2/repository"
+ - "$HOME/.m2"
  - "$HOME/.sonar/cache"

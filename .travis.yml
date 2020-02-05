@@ -16,6 +16,8 @@ after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker tag changelogimage $DOCKER_USERNAME/changelogimage:1.0
   - docker push $DOCKER_USERNAME/changelogimage
+  - docker tag httpserverimage $DOCKER_USERNAME/httpserverimage:1.0
+  - docker push $DOCKER_USERNAME/httpserverimage
 notifications:
  email:
    on_failure: never
